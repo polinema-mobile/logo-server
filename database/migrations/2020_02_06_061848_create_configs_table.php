@@ -15,10 +15,12 @@ class CreateConfigsTable extends Migration
     {
         Schema::create('config', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->string('admob_app_id');
             $table->string('admob_banner_id');
             $table->string('admob_inters_id');
             $table->string('admob_rewarded_id');
+
             $table->timestamps();
         });
     }
