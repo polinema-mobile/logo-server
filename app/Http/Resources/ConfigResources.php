@@ -19,7 +19,12 @@ class ConfigResources extends JsonResource
             'admob_app_id' => $this->admob_app_id,
             'admob_banner_id' => $this->admob_banner_id,
             'admob_inters_id' => $this->admob_inters_id,
-            'admob_rewarded_id' => $this->admob_rewarded_id
+            'admob_rewarded_id' => $this->admob_rewarded_id,
+            'app_name' => $this->app_name,
+            'ads_enable' => $this->ads_enable,
+            'banner_enable' => $this->banner_enable,
+            'inters_enable' => $this->inters_enable,
+            'rewarded_enable' => $this->rewarded_enable,
         ];
     }
 }

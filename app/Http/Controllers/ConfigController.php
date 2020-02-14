@@ -41,14 +41,14 @@ class ConfigController extends Controller
     public function store(StoreConfigRequest $request)
     {
         $validated = $request->validated();
-        if($validated){
+        if ($validated) {
             $config = Config::create([
                 'admob_app_id' => $request->admob_app_id,
                 'admob_banner_id' => $request->admob_banner_id,
                 'admob_inters_id' => $request->admob_inters_id,
-                'admob_rewarded_id' => $request->admob_rewarded_id
+                'admob_rewarded_id' => $request->admob_rewarded_id,
+                'app_name' => $request->app_name,
             ]);
-
             return new ConfigResources($config);
         }
     }
@@ -62,6 +62,7 @@ class ConfigController extends Controller
     public function show(Config $config)
     {
         //
+        return new ConfigResources($config);
     }
 
     /**
@@ -85,6 +86,10 @@ class ConfigController extends Controller
     public function update(Request $request, Config $config)
     {
         //
+
+        $config->update($request->only(['app_name', 'admob_rewarded_id', 'admob_inters_id', 'admob_banner_id', 'admob_app_id']));
+
+        return new ConfigResources($config);
     }
 
     /**
@@ -95,6 +100,7 @@ class ConfigController extends Controller
      */
     public function destroy(Config $config)
     {
-        //
+        $config->delete();
+        return response()->json(new ConfigResources($config), 200);
     }
 }

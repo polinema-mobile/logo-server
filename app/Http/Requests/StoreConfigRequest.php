@@ -33,6 +33,11 @@ class StoreConfigRequest extends FormRequest
             'admob_banner_id' => 'required',
             'admob_inters_id' => 'required',
             'admob_rewarded_id' => 'required',
+            'app_name'=>'required|unique:config',
+            'ads_enable'=>'required',
+            'banner_enable'=>'required',
+            'inters_enable'=>'required',
+            'rewarded_enable'=>'required',
         ];
     }
 
@@ -44,6 +49,12 @@ class StoreConfigRequest extends FormRequest
             'admob_banner_id.required' => 'Banner Id Harus di Isi',
             'admob_inters_id.required' => 'Interstitial Id Harus di Isi',
             'admob_rewarded_id.required' => 'Rewarded Id Harus di Isi',
+            'app_name.required' => 'Nama APlikasi Harus di Isi',
+            'app_name.unique' => 'Nama APlikasi Sudah Pernah Ada',
+            'ads_enable.required' => 'Status Ads Harus di Isi',
+            'banner_enable.required' => 'Status Banner Harus di Isi',
+            'inters_enable.required' => 'Status Inters Harus di Isi',
+            'rewarded_enable.required' => 'Status Rewarded Harus di Isi',
         ];
 
     }

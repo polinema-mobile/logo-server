@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826652b1-1f4f-458b-9e47-1e269a845450" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StoreConfigRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ConfigResources.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_14_030745_add_app_name_to_configs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_14_175955_add_enabler_to_config_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/logodl-v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/logodl-v2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_06_061848_create_configs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_06_061848_create_configs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreConfigRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreConfigRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ConfigResources.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ConfigResources.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -144,6 +150,9 @@
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
       <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XMj2mmuDAjMmwTTTQE8I8VcpSq" />
@@ -180,6 +189,10 @@
       <option name="presentableId" value="Default" />
       <updated>1580862652271</updated>
       <workItem from="1580862655457" duration="7801000" />
+      <workItem from="1581227984703" duration="1046000" />
+      <workItem from="1581316776768" duration="923000" />
+      <workItem from="1581479826716" duration="189000" />
+      <workItem from="1581486697266" duration="6896000" />
     </task>
     <task id="LOCAL-00001" summary="Start nggarap config">
       <created>1580970919257</created>
@@ -188,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580970919257</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Start nggarap config">
+      <created>1581228141572</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581228141573</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,13 +228,18 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580974789384" />
-    <state x="419" y="127" key="CommitChangelistDialog2" timestamp="1580970918741">
+    <state x="419" y="127" key="CommitChangelistDialog2" timestamp="1581228140971">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="419" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1580970918741" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1580975296294">
+    <state x="419" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1581228140971" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1581486881618">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1581317625387" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581486881618" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1581680163325">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1580975296294" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581680163325" />
   </component>
 </project>
