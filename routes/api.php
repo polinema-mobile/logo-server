@@ -25,6 +25,8 @@ Route::post('login', 'UserController@userLogin');
 Route::get('config/{config}','ConfigController@show');
 Route::post('config','ConfigController@store');
 Route::put('config/{config}','ConfigController@update');
+//category
+Route::get('category','CategoryController@index');
 
 //private config
 Route::group(['middleware' => 'auth:api'], function() {
