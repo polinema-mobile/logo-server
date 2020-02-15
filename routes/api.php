@@ -17,16 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//register n login
 Route::post('register', 'UserController@registerUser');
-
 Route::post('login', 'UserController@userLogin');
 
-
-//Route::resource('config','ConfigController');
+//config
 Route::get('config/{config}','ConfigController@show');
 Route::post('config','ConfigController@store');
 Route::put('config/{config}','ConfigController@update');
 
+//private config
 Route::group(['middleware' => 'auth:api'], function() {
     Route::delete('config/{config}','ConfigController@destroy');
     Route::get('config','ConfigController@index');
