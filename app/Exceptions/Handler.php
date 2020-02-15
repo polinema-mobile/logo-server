@@ -56,6 +56,9 @@ class Handler extends ExceptionHandler
 
         return response()->json(['message' => 'Not Found!'], 404);
         }
+        if ($exception instanceof \InvalidArgumentException){
+            return response()->json(['message' => 'Unauthenticated'], 401);
+        }
         return parent::render($request, $exception);
     }
 }

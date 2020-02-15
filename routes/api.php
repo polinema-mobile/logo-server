@@ -21,4 +21,7 @@ Route::post('register', 'UserController@registerUser');
 
 Route::post('login', 'UserController@userLogin');
 
-Route::resource('config','ConfigController');
+
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::resource('config','ConfigController');
+});
