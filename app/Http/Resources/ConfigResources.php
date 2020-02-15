@@ -25,6 +25,9 @@ class ConfigResources extends JsonResource
             'banner_enable' => $this->banner_enable,
             'inters_enable' => $this->inters_enable,
             'rewarded_enable' => $this->rewarded_enable,
+            'promote_enable' => $this->promote_enable,
+            'promote_url' => $this->promote_url,
+            'promote_image' => $this->promote_image,
         ];
     }
 }

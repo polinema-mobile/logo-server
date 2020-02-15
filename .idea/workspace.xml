@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826652b1-1f4f-458b-9e47-1e269a845450" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_14_030745_add_app_name_to_configs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_14_175955_add_enabler_to_config_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/logodl-v2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/logodl-v2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_14_230123_add_promote_to_config_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreConfigRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreConfigRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/ConfigResources.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ConfigResources.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +186,7 @@
       <workItem from="1581227984703" duration="1046000" />
       <workItem from="1581316776768" duration="923000" />
       <workItem from="1581479826716" duration="189000" />
-      <workItem from="1581486697266" duration="6896000" />
+      <workItem from="1581486697266" duration="8005000" />
     </task>
     <task id="LOCAL-00001" summary="Start nggarap config">
       <created>1580970919257</created>

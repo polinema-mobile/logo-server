@@ -38,6 +38,9 @@ class StoreConfigRequest extends FormRequest
             'banner_enable'=>'required',
             'inters_enable'=>'required',
             'rewarded_enable'=>'required',
+            'promote_enable'=>'required',
+            'promote_image'=>'required',
+            'promote_url'=>'required',
         ];
     }
 
@@ -55,6 +58,9 @@ class StoreConfigRequest extends FormRequest
             'banner_enable.required' => 'Status Banner Harus di Isi',
             'inters_enable.required' => 'Status Inters Harus di Isi',
             'rewarded_enable.required' => 'Status Rewarded Harus di Isi',
+            'promote_enable.required' => 'Status Cross Promote Harus di Isi',
+            'promote_image.required' => 'Image Cross Promote Harus di Isi',
+            'promote_url.required' => 'Url Cross Promote Harus di Isi',
         ];
 
     }

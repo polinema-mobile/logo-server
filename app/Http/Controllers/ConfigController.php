@@ -48,6 +48,13 @@ class ConfigController extends Controller
                 'admob_inters_id' => $request->admob_inters_id,
                 'admob_rewarded_id' => $request->admob_rewarded_id,
                 'app_name' => $request->app_name,
+                'ads_enable' => $request->ads_enable,
+                'banner_enable' => $request->banner_enable,
+                'inters_enable' => $request->inters_enable,
+                'rewarded_enable' => $request->rewarded_enable,
+                'promote_enable' => $request->promote_enable,
+                'promote_image' => $request->promote_image,
+                'promote_url' => $request->promote_url,
             ]);
             return new ConfigResources($config);
         }
@@ -87,7 +94,21 @@ class ConfigController extends Controller
     {
         //
 
-        $config->update($request->only(['app_name', 'admob_rewarded_id', 'admob_inters_id', 'admob_banner_id', 'admob_app_id']));
+        $config->update($request->only([
+            'app_name',
+            'admob_rewarded_id',
+            'admob_inters_id',
+            'admob_banner_id',
+            'admob_app_id',
+            'app_name',
+            'ads_enable',
+            'banner_enable',
+            'inters_enable',
+            'rewarded_enable',
+            'promote_enable',
+            'promote_image',
+            'promote_url',
+        ]));
 
         return new ConfigResources($config);
     }
