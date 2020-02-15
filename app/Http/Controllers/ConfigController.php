@@ -19,7 +19,6 @@ class ConfigController extends Controller
         //
         $config = Config::all();
         return ConfigResources::collection($config);
-
     }
 
     /**

@@ -22,6 +22,9 @@ Route::post('register', 'UserController@registerUser');
 Route::post('login', 'UserController@userLogin');
 
 
-Route::group(['middleware' => 'auth:api'], function() {
-    Route::resource('config','ConfigController');
-});
+//Route::resource('config','ConfigController');
+Route::get('config','ConfigController@index');
+Route::get('config/{config}','ConfigController@show');
+Route::post('config','ConfigController@store');
+Route::put('config','ConfigController@update');
+Route::delete('config/{config}','ConfigController@destroy');
