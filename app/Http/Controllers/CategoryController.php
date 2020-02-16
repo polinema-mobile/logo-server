@@ -30,7 +30,13 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         //
-
+        $fileName = time().'.'.$request->logo->extension();
+        $request->logo->move(public_path('uploads'), $fileName);
+        $category = Category::create([
+            'name'=>$request->name,
+            'logo'=>$fileName
+        ]);
+        return new CategoryResource($category);
     }
 
     /**
@@ -39,9 +45,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
         //
+        return new CategoryResource($category);
     }
 
     /**
