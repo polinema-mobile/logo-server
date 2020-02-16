@@ -3,8 +3,11 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -51,14 +54,50 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof ModelNotFoundException){
-//            && $request->wantsJson()) {
+//        if ($exception instanceof ModelNotFoundException){
+////            && $request->wantsJson()) {
+//
+//        return response()->json(['message' => 'Not Found!'], 404);
+//        }
+//        if ($exception instanceof \InvalidArgumentException){
+//            return response()->json(['message' => 'Unauthenticated'], 401);
+//        }
+//        return parent::render($request, $exception);
 
-        return response()->json(['message' => 'Not Found!'], 404);
+        $rendered = parent::render($request, $exception);
+
+        if ($exception instanceof ValidationException) {
+            $json = [
+                'error' => $exception->validator->errors(),
+                'status_code' => $rendered->getStatusCode()
+            ];
+        } elseif ($exception instanceof AuthorizationException) {
+            $json = [
+                'error' => 'You are not allowed to do this action.',
+                'status_code' => 403
+            ];
+        }elseif($exception instanceof AuthenticationException){
+            $json = [
+                'error' => 'You are not allowed to do this action.',
+                'status_code' => 403
+            ];
         }
-        if ($exception instanceof \InvalidArgumentException){
-            return response()->json(['message' => 'Unauthenticated'], 401);
+        elseif($exception instanceof \InvalidArgumentException){
+            $json = [
+                'error' => 'You are not allowed to do this action.',
+                'status_code' => 403
+            ];
         }
-        return parent::render($request, $exception);
+        else {
+            // Default to vague error to avoid revealing sensitive information
+            $json = [
+                'error' => (app()->environment() !== 'production')
+                    ? $exception->getMessage()
+                    : 'An error has occurred.',
+                'status_code' => $exception->getCode()
+            ];
+        }
+
+        return response()->json($json, $rendered->getStatusCode());
     }
 }
