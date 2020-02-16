@@ -29,6 +29,7 @@ Route::put('config/{config}','ConfigController@update');
 Route::get('category','CategoryController@index');
 Route::post('category','CategoryController@store');
 Route::get('category/{category}','CategoryController@show');
+Route::delete('category/{category}','CategoryController@destroy');
 
 //private config
 Route::group(['middleware' => 'auth:api'], function() {

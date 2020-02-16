@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Resources\CategoryResource;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -69,8 +70,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
         //
+        $fileName = public_path('/uploads/').$category->logo;
+        unlink($fileName);
+        $category->delete();
+        return response()->json(new CategoryResource($category), 200);
     }
 }
