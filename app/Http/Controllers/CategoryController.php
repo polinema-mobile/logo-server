@@ -59,9 +59,20 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreCategoryRequest $request, Category $category)
     {
-        //
+
+        $fileName = time().'.'.$request->logo->extension();
+        $request->logo->move(public_path('uploads'), $fileName);
+        $oldFileName = $category->logo;
+        $oldFilePath = public_path('/uploads/').$oldFileName;
+        unlink($oldFilePath);
+        $category->update($request->only([
+            'name',
+            'logo',
+        ]));
+
+        return new CategoryResource($category);
     }
 
     /**
