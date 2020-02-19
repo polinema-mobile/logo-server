@@ -58,9 +58,6 @@ class Handler extends ExceptionHandler
 //
 //        return response()->json(['message' => 'Not Found!'], 404);
 //        }
-//        if ($exception instanceof \InvalidArgumentException){
-//            return response()->json(['message' => 'Unauthenticated'], 401);
-//        }
 //        return parent::render($request, $exception);
 
         $rendered = parent::render($request, $exception);
@@ -75,6 +72,8 @@ class Handler extends ExceptionHandler
                 'error' => 'You are not allowed to do this action.',
                 'status_code' => 403
             ];
+        }elseif ($exception instanceof \InvalidArgumentException){
+            return response()->json(['error' => 'You are not authenticated', 'status_code'=>401]);
         }
         else {
             // Default to vague error to avoid revealing sensitive information

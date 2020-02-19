@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="826652b1-1f4f-458b-9e47-1e269a845450" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WallpaperController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WallpaperController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +184,7 @@
       <workItem from="1581316776768" duration="923000" />
       <workItem from="1581479826716" duration="189000" />
       <workItem from="1581486697266" duration="33533000" />
-      <workItem from="1582074302395" duration="2750000" />
+      <workItem from="1582074302395" duration="3129000" />
     </task>
     <task id="LOCAL-00001" summary="Start nggarap config">
       <created>1580970919257</created>
@@ -201,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581228141573</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Done wallpaper">
+      <created>1582077760757</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582077760758</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +216,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Start nggarap config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start nggarap config" />
+    <MESSAGE value="Done wallpaper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done wallpaper" />
   </component>
   <component name="WindowStateProjectService">
     <state x="167" y="0" width="496" height="1050" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580972543857">
@@ -221,14 +228,18 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1582077341905" />
-    <state x="419" y="127" key="CommitChangelistDialog2" timestamp="1581228140971">
+    <state x="419" y="127" key="CommitChangelistDialog2" timestamp="1582077760103">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="419" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1581228140971" />
+    <state x="419" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1582077760103" />
     <state x="349" y="164" key="SettingsEditor" timestamp="1582076947516">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1582076947516" />
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2" timestamp="1582077764162">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="266" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1582077764162" />
     <state x="131" y="103" width="1418" height="845" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581911929939">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
