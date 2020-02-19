@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Category;
@@ -16,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $category = Category::all();
+        $category = Category::paginate(10);
         return CategoryResource::collection($category);
     }
 
@@ -30,7 +29,7 @@ class CategoryController extends Controller
     {
         //
         $fileName = time() . '.' . $request->logo->extension();
-        $request->logo->move(public_path('uploads'), $fileName);
+        $request->logo->move(public_path('/uploads/'), $fileName);
         $category = Category::create([
             'name' => $request->name,
             'logo' => $fileName
@@ -65,7 +64,7 @@ class CategoryController extends Controller
             unlink($filePath);
         }
         $fileName = time() . '.' . $request->logo->extension();
-        $request->logo->move(public_path('uploads'), $fileName);
+        $request->logo->move(public_path('/uploads/'), $fileName);
 
         $category->update([
             'name' => $request->name,

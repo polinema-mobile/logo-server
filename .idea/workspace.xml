@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="826652b1-1f4f-458b-9e47-1e269a845450" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/WallpaperController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/WallpaperRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/WallpaperResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WallpaperController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WallpaperController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +162,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -186,7 +185,7 @@
       <workItem from="1581316776768" duration="923000" />
       <workItem from="1581479826716" duration="189000" />
       <workItem from="1581486697266" duration="33533000" />
-      <workItem from="1582074302395" duration="1399000" />
+      <workItem from="1582074302395" duration="2750000" />
     </task>
     <task id="LOCAL-00001" summary="Start nggarap config">
       <created>1580970919257</created>
@@ -218,14 +217,18 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="167" y="0" width="496" height="1050" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580972543857" />
-    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582075985793">
+    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582077341905">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1582075985793" />
+    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1582077341905" />
     <state x="419" y="127" key="CommitChangelistDialog2" timestamp="1581228140971">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="419" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1581228140971" />
+    <state x="349" y="164" key="SettingsEditor" timestamp="1582076947516">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="349" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1582076947516" />
     <state x="131" y="103" width="1418" height="845" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581911929939">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -236,10 +239,10 @@
     </state>
     <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1582074326029" />
     <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581486881618" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1581925489920">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1582077334759">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="385" y="227" width="670" height="660" key="search.everywhere.popup/0.0.1280.1024@0.0.1280.1024" timestamp="1581910661457" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581925489920" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582077334759" />
   </component>
 </project>

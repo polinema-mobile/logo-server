@@ -5,19 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\WallpaperRequest;
 use App\Http\Resources\WallpaperResource;
 use App\Wallpaper;
-use Illuminate\Http\Request;
 
 class WallpaperController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
-        $wallpaper = Wallpaper::all();
+        $wallpaper = Wallpaper::paginate(10);
         return WallpaperResource::collection($wallpaper);
     }
 
@@ -30,7 +28,7 @@ class WallpaperController extends Controller
     public function store(WallpaperRequest $request)
     {
         $fileName = time() . '.' . $request->url->extension();
-        $request->url->move(public_path('uploads/wallpaper'), $fileName);
+        $request->url->move(public_path('uploads/wallpaper/'), $fileName);
         $wallpaper = Wallpaper::create([
             'wallpaper_name' => $request->wallpaper_name,
             'url' => $fileName,
@@ -45,9 +43,10 @@ class WallpaperController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Wallpaper $wallpaper)
     {
         //
+        return new WallpaperResource($wallpaper);
     }
 
     /**
@@ -57,9 +56,24 @@ class WallpaperController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(WallpaperRequest $request, Wallpaper $wallpaper)
     {
         //
+        $fileName = $wallpaper->url;
+        $filePath = public_path("/uploads/wallpaper/") . $fileName;
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+        $fileName = time() . '.' . $request->url->extension();
+        $request->url->move(public_path('uploads/wallpaper/'), $fileName);
+
+        $wallpaper->update([
+            'wallpaper_name' => $request->wallpaper_name,
+            'url' => $fileName,
+            'fk_category'=>$request->fk_category
+        ]);
+
+        return new WallpaperResource($wallpaper);
     }
 
     /**
@@ -71,7 +85,7 @@ class WallpaperController extends Controller
     public function destroy(Wallpaper $wallpaper)
     {
         //
-        $fileName = public_path('/uploads/wallpaper') . $wallpaper->url;
+        $fileName = public_path('/uploads/wallpaper/') . $wallpaper->url;
         if (file_exists($fileName)) {
             unlink($fileName);
         }
