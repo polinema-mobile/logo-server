@@ -4,7 +4,6 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
@@ -72,17 +71,6 @@ class Handler extends ExceptionHandler
                 'status_code' => $rendered->getStatusCode()
             ];
         } elseif ($exception instanceof AuthorizationException) {
-            $json = [
-                'error' => 'You are not allowed to do this action.',
-                'status_code' => 403
-            ];
-        }elseif($exception instanceof AuthenticationException){
-            $json = [
-                'error' => 'You are not allowed to do this action.',
-                'status_code' => 403
-            ];
-        }
-        elseif($exception instanceof \InvalidArgumentException){
             $json = [
                 'error' => 'You are not allowed to do this action.',
                 'status_code' => 403

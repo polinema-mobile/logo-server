@@ -6,6 +6,7 @@ use App\Config;
 use App\Http\Requests\StoreConfigRequest;
 use App\Http\Resources\ConfigResources;
 use Illuminate\Http\Request;
+use Illuminate\Session\Store;
 
 class ConfigController extends Controller
 {
@@ -89,7 +90,7 @@ class ConfigController extends Controller
      * @param \App\Config $config
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Config $config)
+    public function update(StoreConfigRequest $request, Config $config)
     {
         //
 

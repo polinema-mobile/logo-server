@@ -22,5 +22,4 @@ class Config extends Model
         "promote_url",
         "promote_image"
     ];
-
 }

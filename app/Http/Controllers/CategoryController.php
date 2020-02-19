@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Requests\CategoryRequest;
 use App\Http\Resources\CategoryResource;
-use Illuminate\Http\File;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -25,17 +23,17 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCategoryRequest $request)
+    public function store(CategoryRequest $request)
     {
         //
-        $fileName = time().'.'.$request->logo->extension();
+        $fileName = time() . '.' . $request->logo->extension();
         $request->logo->move(public_path('uploads'), $fileName);
         $category = Category::create([
-            'name'=>$request->name,
-            'logo'=>$fileName
+            'name' => $request->name,
+            'logo' => $fileName
         ]);
         return new CategoryResource($category);
     }
@@ -43,7 +41,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -55,22 +53,24 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreCategoryRequest $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
-
-        $fileName = time().'.'.$request->logo->extension();
+        $fileName = $category->logo;
+        $filePath = public_path("/uploads/") . $fileName;
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+        $fileName = time() . '.' . $request->logo->extension();
         $request->logo->move(public_path('uploads'), $fileName);
-        $oldFileName = $category->logo;
-        $oldFilePath = public_path('/uploads/').$oldFileName;
-        unlink($oldFilePath);
-        $category->update($request->only([
-            'name',
-            'logo',
-        ]));
+
+        $category->update([
+            'name' => $request->name,
+            'logo' => $fileName
+        ]);
 
         return new CategoryResource($category);
     }
@@ -78,14 +78,16 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)
     {
         //
-        $fileName = public_path('/uploads/').$category->logo;
-        unlink($fileName);
+        $fileName = public_path('/uploads/') . $category->logo;
+        if (file_exists($fileName)) {
+            unlink($fileName);
+        }
         $category->delete();
         return response()->json(new CategoryResource($category), 200);
     }
