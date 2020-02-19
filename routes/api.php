@@ -26,15 +26,23 @@ Route::get('config/{config}','ConfigController@show');
 Route::post('config','ConfigController@store');
 Route::put('config/{config}','ConfigController@update');
 //category
-Route::get('category','CategoryController@index');
 Route::post('category','CategoryController@store');
 Route::get('category/{category}','CategoryController@show');
 Route::post('category/{category}','CategoryController@update');
-Route::delete('category/{category}','CategoryController@destroy');
 //Route::apiResource('category','CategoryController');
 
-//private config
+//wallpaper
+Route::post('wallpaper','WallpaperController@store');
+Route::get('wallpaper/{wallpaper}','WallpaperController@show');
+Route::post('wallpaper/{wallpaper}','WallpaperController@update');
+Route::delete('wallpaper/{wallpaper}','WallpaperController@destroy');
+Route::get('wallpaper','WallpaperController@index');
+//private
 Route::group(['middleware' => 'auth:api'], function() {
+    //config
     Route::delete('config/{config}','ConfigController@destroy');
     Route::get('config','ConfigController@index');
+    //category
+    Route::delete('category/{category}','CategoryController@destroy');
+    Route::get('category','CategoryController@index');
 });
